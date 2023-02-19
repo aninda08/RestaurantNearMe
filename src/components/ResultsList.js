@@ -7,9 +7,10 @@ import {
 } from 'react-native';
 import React from 'react';
 import ResultsDetails from './ResultsDetails';
-import { withNavigation } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
 
-const ResultsList = ({ title, results, navigation }) => {
+const ResultsList = ({ title, results }) => {
+  const navigation = useNavigation();
   if (!results) {
     return null;
   }
@@ -37,7 +38,7 @@ const ResultsList = ({ title, results, navigation }) => {
   );
 };
 
-export default withNavigation(ResultsList);
+export default ResultsList;
 
 const styles = StyleSheet.create({
   container: { marginBottom: 10 },
